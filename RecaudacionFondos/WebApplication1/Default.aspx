@@ -9,6 +9,18 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <table>
+                <%
+                    foreach (var i in ParticipantesList)
+                    {%>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <%}
+                %>
+            </table>
+
         </div>
     </form>
 </body>
