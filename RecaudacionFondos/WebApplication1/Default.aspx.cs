@@ -13,6 +13,7 @@ namespace WebApplication1
     {
         //Se declara una propiedad como un listado de participantes
         public List<Participante> ParticipantesList { get; set; }
+        public List <Pago> PagosParticipantesList { get; set; }
         /// <summary>
         /// Método que se ejecuta al cargar la pagina
         /// </summary>
@@ -22,13 +23,15 @@ namespace WebApplication1
         {
             //se instancia la propiedad siempre que la pagina se carge
             ParticipantesList = new List<Participante>();
+            PagosParticipantesList = new List<Pago>();
             if (!IsPostBack)
             {
                 //leemos el archivo con los participantes
                 //Esta readlllines lee el archivo y regresa un arreglo de string por cada liena 
                 //var participantesString = File.ReadAllLines(@"~\Participantes.csv");
                 var participantesString = File.ReadAllLines(Server.MapPath("~/Participantes.csv"));
-                
+                //var pagosparticipantesString = File.ReadAllLines(Server.MapPath("~/Pagos.cvs"));
+
                 //recorremos el arreglo e insertamos cada elemento al listado que tenemos de participantes
                 foreach (var i in participantesString)
                 {
@@ -45,8 +48,23 @@ namespace WebApplication1
                         NombreParticipante = columnas[1]
                     });
                 }
-                
+
+                //foreach (var i in pagosparticipantesString)
+                //{
+                //    var columnas = i.Split(',');
+
+                //    PagosParticipantesList.Add(new Pago()
+                //    {
+                //        Id = Convert.ToInt32(columnas[0]),
+                //        IdParticipante = Convert.ToInt32(columnas[1]),
+                //        Fecha = Convert.ToDateTime(columnas[2]),
+                //        Monto = Convert.ToInt32(columnas[3])
+                //    });
+
+                //}
             }
+
+            
         }
     }
 }
