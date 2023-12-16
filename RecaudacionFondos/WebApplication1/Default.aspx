@@ -36,11 +36,7 @@
                     <tr>
                         <td style="display: none;"><%:i.Id%></td>
                         <td><%:i.NombreParticipante%></td>
-                        <%
-                        foreach (var i in Fechas)
-                        {%>
-                         <%}
-                    %>
+                       
                     </tr>
                     <%}
                     %>
