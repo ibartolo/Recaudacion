@@ -24,19 +24,46 @@
                     <tr>
                         <td></td>
                         <%  foreach (var i in Fechas)
-                            {%>
-                        <td><%:i%></td>
-                        <%}
+                            {
+                        %>
+                                <td><%:i%></td>
+                        <%
+                            }
                         %>
                         <td></td>
                     </tr>
-                    <%
-                        foreach (var i in ParticipantesList)
-                        {%>
+                        <%
+                            foreach (var i in ParticipantesList)
+                            {
+                        %>
                     <tr>
                         <td style="display: none;"><%:i.Id%></td>
                         <td><%:i.NombreParticipante%></td>
-                       
+                        <%
+                            foreach (var a in Fechas)
+                            {
+                                foreach (var aa in PagosParticipantesList)
+                                {
+                                    if (i.Id == aa.IdParticipante && aa.Fecha.ToString("dd-MM-yyyy").Equals(a))
+                                    {
+                        %>
+                                        <td>$ <%:aa.Monto%></td>
+
+                        <%
+                                    }
+                        %>
+                        <%
+                                    else
+                                    {
+                        %>
+                                        
+                        <%
+                                    }
+                        %>
+                        <%
+                                }
+                            }
+                        %>
                     </tr>
                     <%}
                     %>
