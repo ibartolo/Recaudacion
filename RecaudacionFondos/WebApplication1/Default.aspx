@@ -1,44 +1,52 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1.Default" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<head runat="server">
-    <title></title>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <table class="table">
-                <%
-                    foreach (var i in ParticipantesList)
-                    {%>
-                <tr>
-                    <td><%:i.Id%></td>
-                    <td><%:i.NombreParticipante%></td>
-                </tr>
-                <%}
-                %>
-            </table>
 
-            <table>
-                <%
-                    foreach (var i in PagosParticipantesList)
-                    {%>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <%}
+    <div class="jumbotron text-center">
+        <h1>Mantenimiento a la calle Habana</h1>
+        <p></p>
+    </div>
 
-                %>
-            </table>
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <td></td>
+                        <%  foreach (var i in Fechas)
+                            {%>
+                        <td><%:i%></td>
+                        <%}
+                        %>
+                        <td></td>
+                    </tr>
+                    <%
+                        foreach (var i in ParticipantesList)
+                        {%>
+                    <tr>
+                        <td style="display: none;"><%:i.Id%></td>
+                        <td><%:i.NombreParticipante%></td>
+                        <%
+                        foreach (var i in Fechas)
+                        {%>
+                         <%}
+                    %>
+                    </tr>
+                    <%}
+                    %>
+                </table>
+            </div>
         </div>
-    </form>
+    </div>
 </body>
 </html>
