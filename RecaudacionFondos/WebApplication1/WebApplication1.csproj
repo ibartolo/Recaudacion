@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AltaPagos.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -74,6 +75,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaPagos.aspx.cs">
+      <DependentUpon>AltaPagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaPagos.aspx.designer.cs">
+      <DependentUpon>AltaPagos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -38,6 +38,7 @@ namespace WebApplication1
 
             ParticipantesList = new List<Participante>();
             PagosParticipantesList = new List<Pago>();
+
             if (!IsPostBack)
             {
                 var participantesString = File.ReadAllLines(Server.MapPath("~/Participantes.csv"));
@@ -68,6 +69,15 @@ namespace WebApplication1
                     });
 
                 }
+                // foreach (var i in ParticipantesList)
+                //{
+                //    var columnas = i.Split(',');
+                //    ParticipantesList.Add(new Participante()
+                //    {
+                        
+                //    });
+                    
+                //}
             }
 
             

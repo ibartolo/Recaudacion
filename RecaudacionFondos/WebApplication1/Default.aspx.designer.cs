@@ -7,11 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
-{
-
-
-    public partial class Default
-    {
+namespace WebApplication1 {
+    
+    
+    public partial class Default {
     }
 }
